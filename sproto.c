@@ -71,7 +71,7 @@ pool_release(struct pool *p) {
 
 static void *
 pool_newchunk(struct pool *p, size_t sz) {
-	struct chunk * t = (chunk*)malloc(sz + sizeof(struct chunk));
+	struct chunk * t = (struct chunk*)malloc(sz + sizeof(struct chunk));
 	if (t == NULL)
 		return NULL;
 	t->next = p->header;
